@@ -4,7 +4,7 @@
 
 from cryptography.hazmat.primitives import hashes
 
-from .algorithms import RSAAlgorithm, HMACAlgorithm
+from .algorithms import RSAAlgorithm, HMACAlgorithm, DSAAlgorithm
 from .ns import DSigNs, DSigNs11, NS_MAP
 
 ID_ATTR = 'Id'
@@ -137,6 +137,12 @@ TransformUsageSignatureMethod = {
     },
     TransformHmacSha512: {
         'digest': hashes.SHA512, 'method': HMACAlgorithm
+    },
+    TransformDsaSha1: {
+        'digest': hashes.SHA1, 'method': DSAAlgorithm
+    },
+    TransformDsaSha256: {
+        'digest': hashes.SHA256, 'method': DSAAlgorithm
     }
 }
 
